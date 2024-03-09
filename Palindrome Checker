@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool palin(const string& str) {
+  int lefts = 0, rights = str.length() - 1;
+
+  while (lefts <= rights) {
+    char left = tolower(str[lefts]);
+    while (!isalnum(left) && lefts < rights) {
+      lefts++;
+      left = tolower(str[lefts]);
+    }
+    char right = tolower(str[rights]);
+    while (!isalnum(right) && lefts < rights) {
+      rights--;
+      right = tolower(str[rights]);
+    }
+    if (left != right) {
+      return false;
+    }
+    lefts++;
+    rights--;
+  }
+  return true;
+}
+
+int main() {
+  string str;
+  cout << "Enter a string: ";
+  getline(cin, str);
+  if (palin(str)) {
+    cout << str << " is a palindrome" << endl;
+  } else {
+    cout << str << " is not a palindrome" << endl;
+  }
+  return 0;
+}
