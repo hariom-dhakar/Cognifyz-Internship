@@ -1,0 +1,46 @@
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    float n1,n2;
+
+    cout<<"Enter the first number: ";
+    cin>>n1;
+
+    cout<<"Enter the first number: ";
+    cin>>n2;
+
+    char c;
+
+    cout<<"Input an operator: ";
+    cin>>c;
+
+    switch (c)
+    {
+        case '+':
+        cout<<n1+n2<<endl;
+        break;
+
+        case '-' :
+        cout<<n1-n2<<endl;
+        break;
+
+        case '*':
+        cout<<n1*n2<<endl;
+        break;
+
+        case '/':
+        cout<<n1/n2<<endl;
+        break;
+
+        case '%':
+        cout<<(n1/n2)*100<<endl;
+        break;
+
+        default:
+        cout<<"Enter another  operator"<<endl;
+        break;
+    }
+    return 0;
+}
